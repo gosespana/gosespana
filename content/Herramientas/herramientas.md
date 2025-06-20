@@ -16,6 +16,7 @@ Este documento reúne herramientas útiles para mejorar la privacidad y segurida
 Tarjetas de regalo y servicios de pago que protegen la privacidad al realizar transacciones en línea.
 - [stealths.net](https://stealths.net) 
 - [xkode.lo](https://xkode.lo) (Worldwide VISA Giftcard)
+- https://www.xkard.io/ (tarjeta sin KYC recarga cripto)
 
 ---
 
@@ -141,6 +142,7 @@ Servicios para SMS y tarjetas eSIM anónimas.
 - [JuicySMS](https://juicysms.com) (SMS)
 - [Crypton](https://crypton.sh) (SMS)
 - [Text Verified](https://www.textverified.com) (SMS)
+- https://nxtlsim.com/
 
 ---
 
