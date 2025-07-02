@@ -35,14 +35,11 @@ Con este setup, cuando cambio de móvil, simplemente sincronizo con mis servicio
 
 Instala [Syncthing](https://syncthing.net/) en tu PC y móvil para sincronizar datos de forma local, sin nube:
 
-|Carpeta Syncthing|Contenido|
-|---|---|
-|`/backups/signal`|Backup cifrado de chats de Signal|
-|`/backups/aegis`|Exportación cifrada de tus 2FA|
-|`/backups/immich`|Fotos y vídeos|
-|`/backups/notes`|Notas de Markor, Joplin, etc.|
+Crea una carpeta tanto en tu PC como en tu móvil para guardar los backups de las apps.
 
-> 📝 **Tip:** Sincroniza estas carpetas con tu PC, NAS o servidor local para tener redundancia.
+Sincroniza esta carpetas con otro PC, móvil, NAS o servidor local para tener redundancia.
+
+Tutorial para usar Syncthing: https://www.youtube.com/watch?v=GSqHUP_c4Fg
 
 ---
 
