@@ -100,17 +100,17 @@ Tutorial para configurar Syncthing: https://www.youtube.com/watch?v=GSqHUP_c4Fg
 
 **Guía básica :**
 
-1. Instala Syncthing en el perfil _Owner_ y en un perfil secundario 🔁 [discuss.grapheneos.org+15discuss.grapheneos.org+15discuss.grapheneos.org+15](https://discuss.grapheneos.org/d/6950-how-do-i-sharetransfer-things-across-profiles-on-graphene-os?utm_source=chatgpt.com)[discuss.grapheneos.org](https://discuss.grapheneos.org/d/7950-does-grapheneos-work-with-google-fi?utm_source=chatgpt.com)
+1. Instala Syncthing en el perfil _Owner_ y en un perfil secundario 🔁 
     
 2. Configura ambos para que usen puertos diferentes (evitas conflictos): edita `127.0.0.1:22000`, etc.
     
 3. Intercambia Device IDs (copiando o escaneando código QR entre perfiles)
     
-4. Crea una carpeta sincronizada en ambos perfiles, elige qué datos quieras compartir (por ejemplo, `/DCIM/Camera`) [discuss.grapheneos.org+3discuss.grapheneos.org+3discuss.grapheneos.org+3](https://discuss.grapheneos.org/d/6950-how-do-i-sharetransfer-things-across-profiles-on-graphene-os?utm_source=chatgpt.com)
+4. Crea una carpeta sincronizada en ambos perfiles, elige qué datos quieras compartir (por ejemplo, `/DCIM/Camera`) 
     
 5. Acepta la petición de sincronización en ambos perfiles y habilita la carpeta
     
-6. Syncthing sincronizará los archivos localmente, sin Internet ni servidor externo [discuss.grapheneos.org+8discuss.grapheneos.org+8discuss.grapheneos.org+8](https://discuss.grapheneos.org/d/13019-transfer-files-and-photos-between-user-account-profiles?utm_source=chatgpt.com)
+6. Syncthing sincronizará los archivos localmente, sin Internet ni servidor externo [
     
 
 **Ventajas**: cifrado, independiente de la nube, automática tras la configuración inicial.  
