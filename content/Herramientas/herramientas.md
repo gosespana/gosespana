@@ -1,8 +1,6 @@
 ---
 title: Herramientas
-draft: false
 tags:
-  - herramientas
   - privacidad
 ---
 

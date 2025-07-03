@@ -4,7 +4,6 @@ tags:
   - grapheneos
 ---
 
-
 En github hay un listado enorme de muchas alternativas a las apps mainstream que no respetan nuestra privacidad (https://github.com/pluja/awesome-privacy)
 
 Pero ahí van algunas de las apps que hemos elegido en el grupo de telegram de GrapheneOS en español (unofficial). Anímate a entrar al grupo y enseñarnos alguna otra que te parezca interesante!

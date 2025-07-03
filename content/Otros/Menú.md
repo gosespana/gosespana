@@ -6,6 +6,7 @@ tags:
   - grapheneos
   - herramientas
   - contacto
+  - privacidad
 ---
 
 ## Menú de categorías
