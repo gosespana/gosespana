@@ -1,3 +1,8 @@
+---
+"": Usuarios
+tags:
+  - grapheneos
+---
 # 🔐 Perfiles en GrapheneOS: Cómo funciona el aislamiento entre usuarios
 
 Una de las características más potentes —y menos comentadas— de **GrapheneOS** (y de AOSP en general) es la posibilidad de crear **múltiples perfiles de usuario**, completamente separados entre sí. Esto permite crear compartimentos seguros dentro del mismo dispositivo: uno para tus apps personales, otro para trabajo, uno para apps con Google Play… incluso uno secreto y oculto.
@@ -83,3 +88,124 @@ Cada perfil de usuario tiene su propia **clave de cifrado**. Esto significa que 
 
 
 
+# 🔄 Compartir archivos entre perfiles en GrapheneOS
+
+En **GrapheneOS (AOSP)**, cada perfil de usuario está completamente aislado: no comparten datos, almacenamiento ni notificaciones. Esto es genial para la privacidad, pero también supone un reto cuando quieres **transferir archivos** entre perfiles. Aquí tienes un método probado y efectivo.
+
+## 📁 Syncthing entre perfiles
+
+Un enfoque popular consiste en instalar **Syncthing** en los perfiles que quieres conectar. No requiere servidor externo, funciona enteramente dentro del teléfono:
+
+Tutorial para configurar Syncthing: https://www.youtube.com/watch?v=GSqHUP_c4Fg
+
+**Guía básica :**
+
+1. Instala Syncthing en el perfil _Owner_ y en un perfil secundario 🔁 [discuss.grapheneos.org+15discuss.grapheneos.org+15discuss.grapheneos.org+15](https://discuss.grapheneos.org/d/6950-how-do-i-sharetransfer-things-across-profiles-on-graphene-os?utm_source=chatgpt.com)[discuss.grapheneos.org](https://discuss.grapheneos.org/d/7950-does-grapheneos-work-with-google-fi?utm_source=chatgpt.com)
+    
+2. Configura ambos para que usen puertos diferentes (evitas conflictos): edita `127.0.0.1:22000`, etc.
+    
+3. Intercambia Device IDs (copiando o escaneando código QR entre perfiles)
+    
+4. Crea una carpeta sincronizada en ambos perfiles, elige qué datos quieras compartir (por ejemplo, `/DCIM/Camera`) [discuss.grapheneos.org+3discuss.grapheneos.org+3discuss.grapheneos.org+3](https://discuss.grapheneos.org/d/6950-how-do-i-sharetransfer-things-across-profiles-on-graphene-os?utm_source=chatgpt.com)
+    
+5. Acepta la petición de sincronización en ambos perfiles y habilita la carpeta
+    
+6. Syncthing sincronizará los archivos localmente, sin Internet ni servidor externo [discuss.grapheneos.org+8discuss.grapheneos.org+8discuss.grapheneos.org+8](https://discuss.grapheneos.org/d/13019-transfer-files-and-photos-between-user-account-profiles?utm_source=chatgpt.com)
+    
+
+**Ventajas**: cifrado, independiente de la nube, automática tras la configuración inicial.  
+_💬 "Syncthing. My setup is a synced folder between the profiles and my PC... The PC could be a NAS, server, phone…"_ [discuss.grapheneos.org+4discuss.grapheneos.org+4discuss.grapheneos.org+4](https://discuss.grapheneos.org/d/4324-sharing-files-between-user-profiles?utm_source=chatgpt.com)
+
+
+## 🔧 Cómo cambiar los puertos en Syncthing en Android (GrapheneOS)
+
+Cuando usas **Syncthing en varios perfiles de usuario** en el mismo dispositivo (por ejemplo, _Owner_ y un perfil secundario), es necesario que **cada instancia use puertos distintos**, ya que comparten el mismo sistema y podrían entrar en conflicto si usan los mismos por defecto.
+
+### 🎯 Objetivo
+
+- Cambiar:
+    
+    - El puerto de **sincronización de datos** (por defecto `22000`)
+        
+    - El puerto de la **interfaz web (GUI)** (por defecto `8384`)
+        
+
+---
+
+## 📱 Guía paso a paso desde la app Syncthing en Android
+
+### 🔹 Paso 1 – Abre la app Syncthing y accede a la interfaz web integrada
+
+1. Abre **Syncthing** en el perfil donde lo tienes instalado.
+    
+2. Toca el **menú de tres líneas horizontales** (☰) en la esquina superior izquierda.
+    
+3. Selecciona **"Interfaz gráfica web"**.
+    
+    Se abrirá la interfaz web dentro de la app (no es un navegador externo).
+    
+
+---
+
+### 🔹 Paso 2 – Entra en los ajustes avanzados
+
+1. Toca el **icono de la rueda dentada** (⚙️) en la esquina superior derecha.
+    
+2. Selecciona **"Ajustes"**.
+    
+3. Ahora estarás en la pantalla de configuración general.
+    
+
+---
+
+### 🔹 Paso 3 – Cambiar el puerto de sincronización de dispositivos
+
+1. Ve a la pestaña **"Conexiones"**.
+    
+2. En el campo **"Direcciones de escucha de protocolo de sincronización"**, estará puesto como `"default"`.
+    
+3. Cámbialo por algo como:
+    
+    `tcp://0.0.0.0:22010`
+    
+    (Puedes usar cualquier puerto **libre** que no esté en uso, como `22020`, `22030`, etc.)
+    
+
+---
+
+### 🔹 Paso 4 – Cambiar el puerto de la interfaz web (GUI)
+
+1. En la misma pantalla de ajustes, desplázate hacia abajo a la sección **"Interfaz gráfica del usuario"**.
+    
+2. En el campo **"Dirección de la interfaz de usuario"**, cambia:
+    
+    - De: `127.0.0.1:8384`
+        
+    - A: `127.0.0.1:8385` (o cualquier otro número único, por ejemplo `8386`)
+        
+
+---
+
+### 🔹 Paso 5 – Guardar y reiniciar
+
+1. Toca **Guardar**.
+    
+2. La app reiniciará el servicio Syncthing con los nuevos puertos.
+    
+
+---
+
+## 🧪 Verifica que funciona
+
+- Puedes volver a entrar en la **Interfaz gráfica web** desde el mismo menú ☰.
+    
+- Si cambiaste la interfaz a un puerto diferente (`8385`), asegúrate de que la app lo detecte correctamente (puede que tarde unos segundos en reconectar internamente).
+    
+- Repite este proceso en los demás perfiles, usando puertos **distintos en cada uno** (ej.: `22010`/`8385`, `22020`/`8386`, etc.).
+    
+
+---
+
+## ✅ Resultado
+
+Ahora cada perfil de usuario tiene su instancia de Syncthing funcionando en paralelo, sin interferencias, y puedes sincronizar carpetas entre ellos (por ejemplo, usando Syncthing en el perfil _Owner_ y en un perfil secundario).
