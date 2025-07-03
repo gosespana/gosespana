@@ -1,3 +1,10 @@
+---
+title: Pagos NFC (GPay)
+tags:
+  - grapheneos
+---
+
+
 # 🚫 ¿Se puede usar Google Pay (GPay) en GrapheneOS?
 
 ## Spoiler: No… pero hay alternativas
