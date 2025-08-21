@@ -1,10 +1,7 @@
 ---
 title: Perfiles de usuario
-draft: false
 tags:
   - grapheneos
-  - privacidad
-  - perfiles_de_usuario
 ---
 
 # **Propuesta para la Creación de 5 Perfiles en GrapheneOS**
