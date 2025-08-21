@@ -1,55 +1,212 @@
 
-## ¿Se puede usar Google Pay?
 
-No se puede hacer que GPay/Wallet funcione en GrapheneOS y es una limitación en la medida en que Google Pay/Wallet requiere el cumplimiento completo de SafetyNet.
+¿Estás pensando en dar el salto a GrapheneOS? ¿Ya lo has instalado y te asaltan las dudas? Este post compila las preguntas más comunes que se hacen quienes empiezan con este sistema operativo centrado en la privacidad. Está basado en experiencias reales de usuarios en foros oficiales y comunidades como Reddit, GOS Español y Telegram.
 
-GrapheneOS puede pasar BasicIntegrity pero el OS no puede pasar ctsProfileMatch ya que eso requeriría que GrapheneOS sea whitelisted por Google. Google Pay/Wallet requiere ambos.
+---
 
-Fuente: https://discuss.grapheneos.org/d/475-wallet-google-pay
+## 🔐 ¿Qué es GrapheneOS?
 
-### Alternativa a GPay:
+GrapheneOS es un sistema operativo alternativo basado en Android Open Source Project (AOSP), centrado en la seguridad y privacidad. Está mantenido por una organización independiente sin ánimo de lucro. Solo es compatible oficialmente con dispositivos Google Pixel.
 
-Algunos bancos permiten en su app poder hacer pagos con NFC. Tenemos constancia de que estos bancos lo permiten:
-- BBVA
-- Cajamar
-- iCard
-- EVO
+---
 
+## 🏦 Pagos NFC: ¿Funcionan en GrapheneOS?
 
-Otra alternativa seria llevar la tarjeta en una funda como estas: https://www.amazon.com/Spigen-Slim-Armor-Designed-MP671/dp/B0BZ5PBKXP
+**Depende del método de pago**:
 
-
-## ¿El usuario propietario tiene acceso a alguna información del resto de usuarios?
-
-No. Los perfiles de usuario son espacios de trabajo aislados con sus propias instancias de aplicaciones, datos de aplicación y datos del perfil (contactos, almacenamiento de medios, directorio de inicio, etc.). 
-Las aplicaciones no pueden ver las aplicaciones de otros perfiles y solo pueden comunicarse con las aplicaciones dentro del propio perfil de usuario (con el consentimiento mutuo de la otra aplicación). 
-
-Cada perfil de usuario tiene sus propias llaves de cifrado basadas en su método de bloqueo. Son una excelente opción para GrapheneOS, pero tienen mucho potencial para mejoras.
-
-Fuente: https://grapheneos.org/features#improved-user-profiles
-
-## ¿Puede una aplicación ver el contenido de otra aplicación o afectarla de alguna manera?
-En GrapheneOS (y en Android en general), una aplicación no puede ver el contenido de otra aplicación ni afectarla directamente, salvo apps con el mismo id de grupo (apps del mismo developer) o apps de sistema.
-
-Esto se debe a:
-
-1. **Aislamiento de Aplicaciones**: Cada aplicación se ejecuta en su propio entorno aislado, lo que impide el acceso directo a los datos de otras aplicaciones.
+- ❌ **Google Wallet (GPay)**: No funciona. GOS no es un sistema certificado por Google, por lo tanto, no permite el uso de Google Pay para pagos NFC.
     
-2. **Permisos**: Las aplicaciones necesitan permisos específicos para acceder a ciertos datos. Sin estos permisos, no pueden interactuar con la información de otras aplicaciones.
+- ✅ **Curve**: Una alternativa popular. Permite agregar tarjetas de bancos tradicionales (Santander, N26, ING, Revolut, etc.) y pagar vía NFC sin necesidad de Google Wallet. [https://www.curve.com/](https://www.curve.com/)
     
-3. **Sandboxing**: Las aplicaciones están "sandboxed", lo que significa que están restringidas en su capacidad para interactuar entre sí, mejorando así la seguridad y la privacidad del usuario.
+- ⚠️ **Apps de bancos**: Algunas apps bancarias funcionan si se instalan en un perfil con Google Play Services sandboxeados. Pero muchas **no soportan pagos NFC directamente** sin la certificación de Google.
+    
 
-Fuente: https://source.android.com/docs/security/app-sandbox
+Consulta experiencias actualizadas en: https://discuss.grapheneos.org
 
-También hay que tener en cuenta que en el ecosistema de Android, la comunicación entre aplicaciones se realiza a través de mecanismos como "intents" y "binders". Los "intents" son mensajes que permiten que diferentes componentes de una aplicación, como actividades y servicios, se comuniquen entre sí. Por otro lado, los "binders" son una forma de comunicación inter-procesos que facilita la interacción entre distintas aplicaciones. Estos mecanismos son esenciales para el funcionamiento de las apps, pero también pueden plantear preocupaciones sobre la privacidad del usuario.
+---
 
-Cuando una aplicación no depende de servicios de Google, es menos probable que existan conexiones maliciosas entre ella y otras aplicaciones. Esto sugiere que las aplicaciones que no utilizan herramientas de seguimiento de Google podrían ser menos propensas a compartir información de manera no ética, lo que podría proteger mejor la privacidad del usuario.
+## ⟳ ¿Se puede volver a la ROM Stock?
 
-Sin embargo, es importante tener en cuenta que cualquier aplicación que incluya un "tracker" tiene el potencial de comprometer la privacidad. Un "tracker" puede recopilar datos directamente del dispositivo sin necesidad de comunicarse con otras aplicaciones, lo que significa que puede operar de manera más oculta. Desde la perspectiva de un desarrollador de "trackers", no sería rentable intentar obtener datos de un número limitado de dispositivos que utilizan Google Play Services, ya que hay una base mucho más amplia de dispositivos Android disponibles.
+Sí. GrapheneOS permite volver al firmware original de Google de forma segura:
 
-Pero no todos los "trackers" son intrusivos o maliciosos. Algunas aplicaciones pueden enviar datos a sus propietarios sin necesidad de incluir un "tracker". Esto resalta la complejidad del ecosistema de aplicaciones y la necesidad de evaluar cada caso de manera individual. En resumen, la preocupación por la privacidad en el uso de aplicaciones debe ser matizada, considerando tanto la tecnología utilizada como el contexto en el que se emplea.
+- Desde la web oficial: https://grapheneos.org/install/web
+    
+- O usando la herramienta de Google: [https://flash.android.com/](https://flash.android.com/)
+    
 
+---
 
+## 📱 ¿GrapheneOS soporta Android 16?
+
+Sí. Desde julio de 2025, Android 16 (AOSP 16) está disponible en el canal estable.
+
+---
+
+## 🧩 ¿Qué se echa en falta respecto a la ROM Stock?
+
+- ❌ No hay Google Assistant, Google Wallet ni funciones exclusivas de Pixel como "Hold for Me".
+    
+- ✅ A cambio, ganas privacidad, control y rendimiento.
+    
+
+Muchos usuarios avanzados afirman no echar nada en falta.
+
+---
+
+## 👥 Perfiles de usuario: organización recomendada
+
+GrapheneOS potencia el uso de perfiles para compartimentar datos y permisos.
+
+Recomendaciones:
+
+- **Perfil Owner**: apps críticas y de confianza.
+    
+- **Perfil "Google"**: apps que requieren servicios de Google.
+    
+- **Otros perfiles**: trabajo, ocio, niños, etc.
+    
+
+Guía oficial: https://grapheneos.org/usage#multiple-users
+
+---
+
+## 🎥 Apps como Netflix, Prime Video: ¿Funcionan?
+
+- ✅ Funcionan si las instalas en un perfil con Google Play sandboxed.
+    
+- ⚠️ Netflix puede limitar resolución a SD si no detecta un sistema certificado.
+    
+- Prime Video, Disney+ y similares suelen funcionar con restricciones menores.
+    
+
+Revisa compatibilidad aquí: https://plexus.techlore.tech/
+
+---
+
+## 🔋 ¿Mejora la autonomía de batería con GOS?
+
+Sí, y mucho:
+
+- Menos procesos en segundo plano.
+    
+- Sin Google Play en el perfil principal.
+    
+- Mejor gestión de permisos.
+    
+
+Usuarios reportan hasta 20-30% más de autonomía respecto a Android stock.
+
+---
+
+## 🚗 Android Auto: ¿Funciona?
+
+- Sí, si lo instalas en un perfil con Google Play Services.
+    
+- Muchos usan un segundo dispositivo con Android como pantalla de Android Auto mientras el Pixel con GOS actúa como GPS.
+    
+
+---
+
+## 📀 Instalación y actualizaciones
+
+- Instala desde la Web Installer.
+    
+- Actualizaciones OTA semanales.
+    
+- Requiere reinicio manual desde el sistema para aplicar parches.
+    
+
+---
+
+## 🔒 Seguridad y privacidad: conceptos clave
+
+- **Google Play sandboxed**: Google Services funcionan como apps normales, sin acceso a datos del sistema.
+    
+- **Privacidad granular**: control total sobre sensores, ubicación, red, micrófono, cámara por app.
+    
+
+---
+
+## 📄 Gestores de apps y backup
+
+- Alternativas a Play Store:
+    
+    - Aurora Store (anónima)
+        
+    - Droid-ify (F-Droid frontend)
+        
+    - Obtanium (para GitHub/FDroid apps)
+        
+- Backup:
+    
+    - Seedvault (incluido, limitado)
+        
+    - Syncthing (recomendado)
+        
+    - Rclone, Restic o backups por ADB
+        
+
+---
+
+## 👥 Compartir archivos y notificaciones entre perfiles
+
+- Archivos: Nearby Share o apps como SendAnywhere (aunque limitadas).
+    
+- Notificaciones cruzadas: Requiere mantener el perfil activo, o apps puente específicas.
+    
+
+---
+
+## 💬 Mensajería y multimedia
+
+- WhatsApp: Requiere Play Services para notificaciones.
+    
+- Signal, Telegram: Funcionan sin problemas.
+    
+- Spotify, YouTube: Funcionan si se instalan en perfil con Play Services.
+    
+- Alternativas libres:
+    
+    - YouTube: NewPipe, LibreTube
+        
+    - Música: ViMusic, Symfonium
+        
+
+---
+
+## 🌐 Conectividad y red
+
+- Firewall: usar NetGuard, RethinkDNS, Invizible Pro.
+    
+- VPN recomendadas: Mullvad, Proton, CalyxVPN.
+    
+- DNS filtrados: NextDNS, AdGuard, Mullvad DNS.
+    
+
+---
+
+## ❓ Dudas frecuentes de nuevos usuarios
+
+- "¿Por qué no puedo usar Google Pay?" → GOS no está certificado.
+    
+- "¿Qué significa sandboxed?" → Aislamiento total, sin privilegios de sistema.
+    
+- "¿Por qué ciertas apps no se instalan?" → Requieren SafetyNet/Play Integrity.
+    
+- "¿Hay equivalente a backup en Google Drive?" → No directo, pero puedes usar Nextcloud, Syncthing o Rclone.
+    
+
+---
+
+## 🔍 Más recursos y enlaces
+
+- Foro oficial: https://discuss.grapheneos.org
+    
+- Comunidad GOS Español (Telegram, Reddit, Matrix)
+    
+- Documentación oficial: https://grapheneos.org/usage
+    
+- Comparador de apps: https://plexus.techlore.tech
 ## Existe alguna alternativa mejor o parecida a GOS?
 
 Tabla comparativa de diferentes ROMs:
