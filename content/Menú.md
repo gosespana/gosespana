@@ -11,7 +11,7 @@ tags:
 
 ## Menú de categorías
 
-- [Auto Hosting](https://goespana.github.io/gosespana/tags/self-host)
+- [Auto Hosting](https://gosespana.github.io/gosespana/tags/self-host)
 - [Graphene OS](https://gosespana.github.io/gosespana/tags/grapheneos)
-- [Herramientas](https://goespana.github.io/gosespana/tags/herramientas)
-- [Colaboración](https://goespana.github.io/gosespana/tags/contacto)
+- [Herramientas](https://gosespana.github.io/gosespana/tags/herramientas)
+- [Colaboración](https://gosespana.github.io/gosespana/tags/contacto)
