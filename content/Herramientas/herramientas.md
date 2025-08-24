@@ -1,8 +1,6 @@
 ---
 title: Herramientas
-draft: false
 tags:
-  - herramientas
   - privacidad
 ---
 
@@ -16,6 +14,7 @@ Este documento reúne herramientas útiles para mejorar la privacidad y segurida
 Tarjetas de regalo y servicios de pago que protegen la privacidad al realizar transacciones en línea.
 - [stealths.net](https://stealths.net) 
 - [xkode.lo](https://xkode.lo) (Worldwide VISA Giftcard)
+- [xKard](https://www.xkard.io/) (tarjeta sin KYC recarga cripto)
 
 ---
 
@@ -49,6 +48,7 @@ Aplicaciones de mensajería cifradas para garantizar conversaciones privadas.
 - [Molly](https://molly.im) (Signal)
 - [Session](https://getsession.org/)
 - [Threema](https://threema.ch) (Pago)
+- [SimpleX](https://simplex.chat/)
 
 ---
 
@@ -141,6 +141,7 @@ Servicios para SMS y tarjetas eSIM anónimas.
 - [JuicySMS](https://juicysms.com) (SMS)
 - [Crypton](https://crypton.sh) (SMS)
 - [Text Verified](https://www.textverified.com) (SMS)
+- https://nxtlsim.com/
 
 ---
 

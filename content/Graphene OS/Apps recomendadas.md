@@ -1,3 +1,8 @@
+---
+title: Apps recomendadas
+tags:
+  - grapheneos
+---
 
 En github hay un listado enorme de muchas alternativas a las apps mainstream que no respetan nuestra privacidad (https://github.com/pluja/awesome-privacy)
 
@@ -61,6 +66,60 @@ Syncthing es una aplicación que le permite sincronizar sus archivos en múltipl
 Debido a que la app Syncthing ha dejado de dar soporte en Android (https://forum.syncthing.net/t/discontinuing-syncthing-android/23002), hemos encontrado este fork:
 
 **Syncthing-Fork:** https://github.com/Catfriend1/syncthing-android
+
+
+# Sincronizar Contactos, Calendario y Tareas sin servidor
+
+## 🔄 ¿Qué es DecSync?
+
+[**DecSync** (Declarative Synchronization)](https://github.com/39aldo39/DecSync) es un conjunto de herramientas que permite **sincronizar contactos, calendarios, tareas y feeds RSS sin necesidad de servidores** (como CalDAV/CardDAV). Funciona **sin red centralizada** y puede usarse con **Syncthing, USB o cualquier método de sincronización de archivos**.
+
+Es ideal para usuarios que:
+
+- No quieren o no pueden montar un servidor Nextcloud
+
+- Quieren mantener **sus datos PIM (Personal Information Management)** totalmente offline y descentralizados
+
+- Usan GrapheneOS u otros sistemas con enfoque en privacidad
+
+
+## 🧩 ¿Cómo funciona?
+
+1. Instalas **DecSync CC** en Android (F-Droid)
+
+2. Usas una app compatible para gestionar cada tipo de dato:
+
+    - **Etar**, **Fossify** para calendarios
+    - **Simple Contacts Pro** o **Contacts (de SimpleMobileTools)** para contactos
+    - **Tasks.org** para tareas
+    - **Feeder** o **Readrops** para RSS
+
+3. Configuras esas apps para **usar una carpeta local gestionada por DecSync**
+
+4. Sincronizas esa carpeta usando **Syncthing**, USB o cualquier otro medio
+
+5. En el nuevo dispositivo, sincronizas esa misma carpeta y automáticamente tendrás todos tus datos restaurados
+
+## 📁 Estructura básica
+
+La carpeta DecSync puede tener una estructura como esta:
+
+`/decsync/ 
+├── addressbooks/ 
+├── calendars/ 
+├── tasks/ 
+├── feeds/`
+
+Puedes sincronizar `/decsync` entre dispositivos como cualquier otra carpeta con Syncthing.
+
+---
+
+## ✅ Ventajas
+
+- 100% sin servidor
+- Sin dependencias de Google ni Nextcloud
+- Funciona offline
+- Completamente cifrable y portable
 
 # Multimedia
 - **NewPipe**: https://newpipe.net/
