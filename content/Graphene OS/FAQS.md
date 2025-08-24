@@ -1,3 +1,8 @@
+---
+title: Faqs
+tags:
+  - grapheneos
+---
 
 
 ¿Estás pensando en dar el salto a GrapheneOS? ¿Ya lo has instalado y te asaltan las dudas? Este post compila las preguntas más comunes que se hacen quienes empiezan con este sistema operativo centrado en la privacidad. Está basado en experiencias reales de usuarios en foros oficiales y comunidades como Reddit, GOS Español y Telegram.
