@@ -126,7 +126,7 @@ Puedes sincronizar `/decsync` entre dispositivos como cualquier otra carpeta con
 
 	App para ver videos de youtube de manera privada, sin iniciar sesión podemos seguir los canales, sin anuncios, reproducción del audio con el móvil bloqueado...
 
-- **RiMusic**: https://rimusic.xyz/
+- **Kreate**: https://kreate.knighthat.me/
 
 	Una aplicación para Android de código abierto y multilingüe para reproducir música de YouTube Music
 
