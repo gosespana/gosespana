@@ -1,5 +1,5 @@
 ---
-title: problemas desbloqueo OEM
+title: Problemas desbloqueo OEM
 tags:
   - grapheneos
 ---
