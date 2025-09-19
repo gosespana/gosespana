@@ -8,7 +8,7 @@ tags:
   - contacto
   - privacidad
 ---
-
+Grupo de telegram: https://t.me/grapheneosEsp
 ## Menú de categorías
 
 - [Auto Hosting](https://gosespana.github.io/gosespana/tags/self-host)
